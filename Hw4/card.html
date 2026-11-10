@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Конструктор визиток</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<form onsubmit="event.preventDefault();updateCard()">
+<h3>Конструктор визиток</h3>
+<label>Наименование организации</label><input id="org" type="text" value="ООО 'Ориентир'">
+<label>Фамилия, имя, отчество</label><input id="fio" type="text" value="Фёдоров Иван Семенович">
+<div class="controls">
+<button type="button" onclick="set('fio','left')">☰</button><button type="button" onclick="set('fio','center')">≡</button><button type="button" onclick="set('fio','right')">☷</button>
+<button type="button" onclick="set('fio',24)">24px</button><button type="button" onclick="set('fio',26)">26px</button><button type="button" onclick="set('fio',28)">28px</button>
+</div>
+<div class="colors" id="fioColors"></div>
+<label>Должность</label><input id="job" type="text" value="Менеджер по развитию">
+<div class="controls">
+<button type="button" onclick="set('job','left')">☰</button><button type="button" onclick="set('job','center')">≡</button><button type="button" onclick="set('job','right')">☷</button>
+<button type="button" onclick="set('job',14)">14px</button><button type="button" onclick="set('job',16)">16px</button><button type="button" onclick="set('job',18)">18px</button>
+</div>
+<div class="colors" id="jobColors"></div>
+<label>Телефон</label><input id="phone" type="text" value="8 (999) 123-45-67">
+<div id="extra"></div><button id="add" type="button" onclick="addPhone()">✚ Добавить ещё один телефон</button>
+<label>E-mail</label><input id="email" type="email" value="fedorov.is@orientir.org"> <label style="display:inline"><input id="showEmail" type="checkbox" checked> Отображать</label>
+<label>Адрес</label><input id="address" type="text" value="Иркутск, Байкальская, 421, оф. 12"> <label style="display:inline"><input id="showAddress" type="checkbox" checked> Отображать</label>
+<br><button id="applyButton" type="submit">Применить</button>
+</form>
+<div class="preview"><div class="card">
+<div id="outOrg"></div><h2 id="outFio"></h2><p id="outJob"></p>
+<div class="details"><p id="outPhone"></p><p id="outEmail"></p><p id="outAddress"></p></div>
+</div></div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

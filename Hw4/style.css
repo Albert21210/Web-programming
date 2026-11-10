@@ -1,0 +1,18 @@
+body{margin:0;background:#eee;color:#444;font:14px Arial}
+main{display:flex;width:1100px;min-height:100vh;margin:auto}
+form{box-sizing:border-box;width:550px;padding:15px;background:white;flex-shrink:0}
+h3{margin:18px 0 30px;color:#666}
+label{display:block;margin:15px 0 5px;color:#777;font-size:13px}
+input[type=text],input[type=email]{box-sizing:border-box;width:248px;padding:4px;border:1px solid #ccc}
+.controls{display:inline-flex;gap:3px;margin-left:25px}
+button{cursor:pointer}
+.controls button{padding:3px 5px;border:1px solid #ccc;background:white}
+.colors{margin-top:8px}
+.colors button{width:23px;height:23px;border:0;border-radius:50%;margin-right:5px}
+#add{display:block;margin-top:8px;padding:0;border:0;background:none;color:#777}
+#applyButton{margin-top:16px;padding:8px 26px;border:0;border-radius:20px;background:#428be8;color:white}
+.preview{padding:77px 0 0 63px}
+.card{box-sizing:border-box;width:430px;min-height:258px;padding:20px;background:white;border-radius:5px;box-shadow:0 2px 8px #bbb;text-align:center;font-size:11px}
+.card h2{margin:33px 0 7px;font-size:24px}
+.card p{margin:9px 0}
+.details{margin:19px 0 0 194px;text-align:left;white-space:nowrap}
