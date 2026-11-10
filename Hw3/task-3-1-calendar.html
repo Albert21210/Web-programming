@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Календарь</title>
+    <style>
+        body { text-align: center; }
+        table { margin: 0 auto; border-collapse: collapse; }
+        th, td { width: 85px; height: 65px; text-align: center; font-size: 22px; }
+        .weekend { color: #b3261e; background-color: #fff0f0; }
+    </style>
+</head>
+<body>
+    <h2>Календарь</h2>
+
+    <script>
+        let date = new Date();
+        let year = date.getFullYear();
+        let month = date.getMonth();
+
+        let days = new Date(year, month + 1, 0).getDate();
+        let firstDay = new Date(year, month, 1).getDay();
+        firstDay = (firstDay + 6) % 7;
+
+        document.write("<h3>" + date.toLocaleString("ru", {
+            month: "long",
+            year: "numeric"
+        }) + "</h3>");
+
+        document.write("<table border='1'>");
+        document.write("<tr><th>Пн</th><th>Вт</th><th>Ср</th><th>Чт</th><th>Пт</th><th class='weekend'>Сб</th><th class='weekend'>Вс</th></tr>");
+
+        let day = 1;
+
+        for (let i = 0; i < 6 && day <= days; i++) {
+            document.write("<tr>");
+            for (let j = 0; j < 7; j++) {
+                if ((i === 0 && j < firstDay) || day > days) {
+                    document.write("<td" + (j >= 5 ? " class='weekend'" : "") + "></td>");
+                } else {
+                    document.write("<td" + (j >= 5 ? " class='weekend'" : "") + ">" + day + "</td>");
+                    day++;
+                }
+            }
+            document.write("</tr>");
+        }
+
+        document.write("</table>");
+    </script>
+</body>
+</html>
